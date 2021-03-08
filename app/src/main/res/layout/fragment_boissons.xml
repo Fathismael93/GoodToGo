@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Controllers.Fragments.BoissonsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/enregistrement_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/ajouter_boissons"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="italic|bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nom_boissons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/enregistrement_title"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nom_boissons"
+                android:textColorHint="@color/guillotine_background"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/category_boissons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nom_boissons"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="dropdown_menu"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/categorie_boissons"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/prix_boissons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category_boissons"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prix_boissons"
+                android:textColorHint="@color/guillotine_background"
+                android:inputType="numberDecimal"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:id="@+id/new_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:layout_below="@+id/prix_boissons" />
+
+        <TextView
+            android:id="@+id/ajouter_new_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/new_category"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/ajouter_autre_produit"
+            android:textColor="@color/guillotine_background"
+            android:textStyle="bold"
+            app:drawableStartCompat="@drawable/ic_add" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ajouter_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ajouter_new_category"
+            android:layout_marginTop="20dp"
+            android:text="@string/ajouter_boissons_button"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</ScrollView>

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Controllers.Fragments.PlatFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/enregistrement_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/ajouter_plat"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="italic|bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nom_plat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/enregistrement_title"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nom_plat"
+                android:textColorHint="@color/guillotine_background"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/add_picture_plat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nom_plat"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="@string/ajouter_photo_restaurant"
+            android:textSize="16sp"
+            android:textColor="@color/guillotine_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/plat_picture"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/add_picture_plat"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/photo_ajout_plat"
+            android:background="@drawable/border_imageview"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/category_plat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/plat_picture"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="dropdown_menu"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_category_plat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/categorie_plat"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/if_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/guillotine_background"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/category_plat"
+            android:visibility="gone"
+            android:text="@string/si_menu"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/drinking_choices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:layout_below="@+id/if_menu" />
+
+        <TextView
+            android:id="@+id/composition_textview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/guillotine_background"
+            android:layout_marginTop="30dp"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/drinking_choices"
+            android:text="@string/compostion_plat"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/category_accompagnement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/composition_textview"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="dropdown_menu"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_accompagnement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/categorie_accompagnement"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/category_viande"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/category_accompagnement"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="30dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="dropdown_menu"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <AutoCompleteTextView
+                android:id="@+id/dropdown_viande"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/categorie_viande"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/if_extra"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/guillotine_background"
+            android:gravity="center_horizontal"
+            android:layout_below="@+id/category_viande"
+            android:text="@string/si_extra"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nature_extra"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/if_extra"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nom_extra"
+                android:textColorHint="@color/guillotine_background"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/prix_extra"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/if_extra"
+            android:layout_toEndOf="@+id/nature_extra"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prix_extra"
+                android:textColorHint="@color/guillotine_background"
+                android:inputType="numberDecimal"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nature_extra_2"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nature_extra"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/nom_extra"
+                android:textColorHint="@color/guillotine_background"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/prix_extra_2"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nature_extra"
+            android:layout_toEndOf="@+id/nature_extra_2"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prix_extra"
+                android:textColorHint="@color/guillotine_background"
+                android:inputType="numberDecimal"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </RelativeLayout>
+
+</ScrollView>

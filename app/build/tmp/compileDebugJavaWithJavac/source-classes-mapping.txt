@@ -1,0 +1,69 @@
+com/benew/client/goodtogo/Utils/App.java
+ com.benew.client.goodtogo.Utils.App
+com/benew/client/goodtogo/Controllers/Activities/RestaurantActivity.java
+ com.benew.client.goodtogo.Controllers.Activities.RestaurantActivity
+com/benew/client/goodtogo/Bases/BaseFragment.java
+ com.benew.client.goodtogo.Bases.BaseFragment
+com/benew/client/goodtogo/Controllers/Fragments/RestoFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.RestoFragment
+com/benew/client/goodtogo/Utils/Prevalent.java
+ com.benew.client.goodtogo.Utils.Prevalent
+com/benew/client/goodtogo/Controllers/Fragments/AddProductFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.AddProductFragment
+com/benew/client/goodtogo/Modals/Restaurant.java
+ com.benew.client.goodtogo.Modals.Restaurant
+com/benew/client/goodtogo/Controllers/Activities/MainActivity.java
+ com.benew.client.goodtogo.Controllers.Activities.MainActivity
+com/benew/client/goodtogo/Controllers/Fragments/SauceFritesFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.SauceFritesFragment
+com/benew/client/goodtogo/Controllers/Fragments/SearchPlatFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.SearchPlatFragment
+com/benew/client/goodtogo/widget/CanaroTextView.java
+ com.benew.client.goodtogo.widget.CanaroTextView
+com/benew/client/goodtogo/FirebaseUsage/FirestoreUsage.java
+ com.benew.client.goodtogo.FirebaseUsage.FirestoreUsage
+com/benew/client/goodtogo/Modals/TypeDesserts.java
+ com.benew.client.goodtogo.Modals.TypeDesserts
+com/benew/client/goodtogo/Receivers/ConnectivityReceiver.java
+ com.benew.client.goodtogo.Receivers.ConnectivityReceiver
+ com.benew.client.goodtogo.Receivers.ConnectivityReceiver$ConnectivityReceiverListener
+com/benew/client/goodtogo/Modals/TypeProducts.java
+ com.benew.client.goodtogo.Modals.TypeProducts
+com/benew/client/goodtogo/APIs/GettingPictureAPI.java
+ com.benew.client.goodtogo.APIs.GettingPictureAPI
+com/benew/client/goodtogo/Modals/TypeBoissons.java
+ com.benew.client.goodtogo.Modals.TypeBoissons
+com/benew/client/goodtogo/APIs/ValidationAPI.java
+ com.benew.client.goodtogo.APIs.ValidationAPI
+com/benew/client/goodtogo/Controllers/Fragments/PlatFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.PlatFragment
+com/benew/client/goodtogo/Utils/Constants.java
+ com.benew.client.goodtogo.Utils.Constants
+com/benew/client/goodtogo/BuildConfig.java
+ com.benew.client.goodtogo.BuildConfig
+com/benew/client/goodtogo/Controllers/Activities/ProfilActivity.java
+ com.benew.client.goodtogo.Controllers.Activities.ProfilActivity
+com/benew/client/goodtogo/Controllers/Fragments/EspaceRFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.EspaceRFragment
+com/benew/client/goodtogo/Controllers/Fragments/ProductsFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.ProductsFragment
+com/benew/client/goodtogo/Modals/TypeViandes.java
+ com.benew.client.goodtogo.Modals.TypeViandes
+com/benew/client/goodtogo/Adapters/AddProductPager.java
+ com.benew.client.goodtogo.Adapters.AddProductPager
+com/benew/client/goodtogo/APIs/OtherFonctionsAPI.java
+ com.benew.client.goodtogo.APIs.OtherFonctionsAPI
+com/benew/client/goodtogo/APIs/DatabaseAPI.java
+ com.benew.client.goodtogo.APIs.DatabaseAPI
+com/benew/client/goodtogo/Bases/BaseActivity.java
+ com.benew.client.goodtogo.Bases.BaseActivity
+com/benew/client/goodtogo/Controllers/Fragments/DessertsFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.DessertsFragment
+com/benew/client/goodtogo/Modals/TypeAccompagnementSousForme.java
+ com.benew.client.goodtogo.Modals.TypeAccompagnementSousForme
+com/benew/client/goodtogo/Controllers/Fragments/EnregistrementFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.EnregistrementFragment
+com/benew/client/goodtogo/Controllers/Fragments/ProfileFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.ProfileFragment
+com/benew/client/goodtogo/Controllers/Fragments/BoissonsFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.BoissonsFragment

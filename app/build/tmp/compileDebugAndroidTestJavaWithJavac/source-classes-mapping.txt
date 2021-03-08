@@ -1,0 +1,4 @@
+com/benew/client/goodtogo/test/BuildConfig.java
+ com.benew.client.goodtogo.test.BuildConfig
+com/benew/client/goodtogo/ExampleInstrumentedTest.java
+ com.benew.client.goodtogo.ExampleInstrumentedTest

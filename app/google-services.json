@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "901859697906",
+    "project_id": "good-to-go-d5930",
+    "storage_bucket": "good-to-go-d5930.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:901859697906:android:1088063eabe40c2daf5c6b",
+        "android_client_info": {
+          "package_name": "com.benew.client.goodtogo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "901859697906-6iis0m70kjjfn18abimd8poijpreg9nj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.benew.client.goodtogo",
+            "certificate_hash": "f7f72fbb51ed34e226b849cd568273a32bd7c4ac"
+          }
+        },
+        {
+          "client_id": "901859697906-1krj7tdfu0ld898a7rb52qagb11p8ean.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0Qmal7w3xNCiNaHUFWCMv9BJLAUHbdiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "901859697906-1krj7tdfu0ld898a7rb52qagb11p8ean.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

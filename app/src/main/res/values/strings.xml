@@ -1,0 +1,223 @@
+<resources>
+    <string name="app_name">Good To Go</string>
+
+    <!-- MENU ACTIVITY-MAIN GUILLOTINE XML -->
+    <string name="restaurant">QUEL RESTO ?</string>
+    <string name="plat">QUEL PLAT ?</string>
+    <string name="espace_resto">Espace Resto</string>
+    <string name="enregistrement">Besoin de service livraison ?</string>
+
+    <!-- MENU ACTIVITY-RESTAURANT GUILLOTINE XML -->
+    <string name="produits">VOS PRODUITS</string>
+    <string name="ajouter_produits">AJOUTER DES PRODUITS</string>
+    <string name="profil">PROFIL</string>
+    <string name="deconnexion">Déconnexion</string>
+
+    <!-- FRAGMENT ENREGISTREMENT XML -->
+    <string name="titre_enregistrement">Enregistrez votre Resto</string>
+    <string name="nom_restaurant">Nom du restaurant</string>
+    <string name="nom_proprietaire">Nom du propriétaire</string>
+    <string name="numero_proprietaire">Numéro du propriétaire</string>
+    <string name="secteur_restaurant">Quel Secteur/Quartier ?</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="boutton_enregistrer">Enregistrer</string>
+
+    <!-- FRAGMENT ESPACE RESTO XML -->
+    <string name="titre_espace_resto">Connectez-vous</string>
+    <string name="pseudo_connexion">Nom du restaurant</string>
+    <string name="mot_de_passe_connexion">Mot de passe</string>
+    <string name="boutton_connexion">Connexion</string>
+
+    <!-- ACTIVITY PROFILE XML -->
+    <string name="completer_profil">Profil Restaurant</string>
+    <string name="coordonnees_restaurant">Coordonnées restaurant</string>
+    <string name="rue_restaurant">Quelle Rue ?</string>
+    <string name="numero_restaurant">Numéro du restaurant</string>
+    <string name="types_produits">Types de produit</string>
+    <string name="types_viandes">Types de viande</string>
+    <string name="forme_plat">Accompagnement / Sous-forme de :</string>
+    <string name="plat_simple">Plat Simple</string>
+    <string name="menu">Menu</string>
+    <string name="speciality">Spécialités</string>
+    <string name="assiettes">Assiettes</string>
+    <string name="plat_du_jour">Plat du jour</string>
+    <string name="boissons">Boissons</string>
+    <string name="dessert">Desserts</string>
+    <string name="poulet">Poulet</string>
+    <string name="viande">Viande (Boeuf, Cabri…)</string>
+    <string name="poisson">Poisson</string>
+    <string name="oeuf">Oeufs</string>
+    <string name="fruits_mer">Fruits de mer</string>
+    <string name="burger">Burger</string>
+    <string name="sandwich">Sandwich</string>
+    <string name="riz">Riz</string>
+    <string name="spaghetti">Spaghetti</string>
+    <string name="moukbaza">Moukbaza</string>
+    <string name="pizza">Pizza</string>
+    <string name="kebab">Kebab</string>
+    <string name="tacos">Tacos</string>
+    <string name="haricot_vert">Haricot vert</string>
+    <string name="frites">Frites</string>
+    <string name="potatoes">Potatoes</string>
+    <string name="crepes_salees">Crêpes salées</string>
+    <string name="crepes_sucrees">Crêpes sucrées</string>
+    <string name="galettes">Galettes</string>
+    <string name="salades">Salades</string>
+    <string name="eau">Eaux minérales</string>
+    <string name="alcoolisees">Boissons alcoolisées</string>
+    <string name="gazeuses">Boissons gazeuses</string>
+    <string name="soda">Soda</string>
+    <string name="jus">Jus</string>
+    <string name="milkshake">Milkshake</string>
+    <string name="the">Thé</string>
+    <string name="cafe">Café</string>
+    <string name="cappuccino">Cappuccino</string>
+    <string name="chocolat_chaud">Chocolat chaud</string>
+    <string name="cremes_glacees">Crêmes glacées</string>
+    <string name="gateaux">Gateaux</string>
+    <string name="tablettes">Tablettes</string>
+    <string name="bonbons">Bonbons</string>
+    <string name="crepes">Crêpes</string>
+    <string name="mousse">de la Mousse</string>
+    <string name="ajouter_photo_restaurant">Cliquez ici pour ajouter une photo</string>
+    <string name="boutton_enregistrer_profil">Enregistrer</string>
+    <string name="photo_profil_restaurant">Photo du restaurant</string>
+
+    <!-- FRAGMENT PROFILE XML -->
+    <string name="info_generales">Informations générales</string>
+    <string name="secteur_resto">Secteur/Quartier</string>
+    <string name="rue_resto">Rue</string>
+    <string name="modifier">Modifier</string>
+    <string name="oui"> Oui</string>
+    <string name="non"> Non</string>
+    <string name="plat_simple_profil">Plat Simple :</string>
+    <string name="menu_profil">Menu :</string>
+    <string name="speciality_profil">Spécialités :</string>
+    <string name="assiettes_profil">Assiettes :</string>
+    <string name="plat_du_jour_profil">Plat du jour :</string>
+    <string name="boissons_profil">Boissons :</string>
+    <string name="dessert_profil">Desserts :</string>
+    <string name="poulet_profil">Poulet :</string>
+    <string name="viande_profil">Viande (Boeuf, Cabri…) :</string>
+    <string name="poisson_profil">Poisson :</string>
+    <string name="oeuf_profil">Oeufs :</string>
+    <string name="fruits_mer_profil">Fruits de mer :</string>
+    <string name="burger_profil">Burger :</string>
+    <string name="sandwich_profil">Sandwich :</string>
+    <string name="riz_profil">Riz :</string>
+    <string name="spaghetti_profil">Spaghetti :</string>
+    <string name="moukbaza_profil">Moukbaza :</string>
+    <string name="pizza_profil">Pizza :</string>
+    <string name="kebab_profil">Kebab :</string>
+    <string name="tacos_profil">Tacos :</string>
+    <string name="haricot_vert_profil">Haricot vert :</string>
+    <string name="frites_profil">Frites :</string>
+    <string name="potatoes_profil">Potatoes :</string>
+    <string name="crepes_salees_profil">Crêpes salées :</string>
+    <string name="crepes_sucrees_profil">Crêpes sucrées :</string>
+    <string name="galettes_profil">Galettes :</string>
+    <string name="salades_profil">Salades :</string>
+    <string name="eau_profil">Eaux minérales :</string>
+    <string name="alcoolisees_profil">Boissons alcoolisées :</string>
+    <string name="gazeuses_profil">Boissons gazeuses :</string>
+    <string name="soda_profil">Soda :</string>
+    <string name="jus_profil">Jus :</string>
+    <string name="milkshake_profil">Milkshake :</string>
+    <string name="the_profil">Thé :</string>
+    <string name="cafe_profil">Café :</string>
+    <string name="cappuccino_profil">Cappuccino :</string>
+    <string name="chocolat_chaud_profil">Chocolat chaud :</string>
+    <string name="cremes_glacees_profil">Crêmes glacées :</string>
+    <string name="gateaux_profil">Gateaux :</string>
+    <string name="tablettes_profil">Tablettes :</string>
+    <string name="bonbons_profil">Bonbons :</string>
+    <string name="crepes_profil">Crêpes :</string>
+    <string name="mousse_profil">de la Mousse :</string>
+
+    <!-- LAYOUT AJOUTER AUTRE XML -->
+    <string name="ajouter_autres">Ajouter d\'autres</string>
+    <string name="nom_autres">Nom</string>
+    <string name="prix_autres">Prix en fdj</string>
+    <string name="categorie_autres">Choisissez une catégorie</string>
+    <string name="ajouter_autre_produit">Ajouter un autre</string>
+
+    <!-- FRAGMENT SAUCES/FRITES XML -->
+    <string name="ajouter_sauces_frites">Ajouter vos sauces et vos frites</string>
+    <string name="nom_sauces_frites">Nom Sauces/Frites</string>
+    <string name="prix_sauces_frites">Prix en fdj</string>
+    <string name="categorie_sauces_frites">Choisissez une catégorie</string>
+    <string name="ajouter_sauces_frites_button">Ajouter</string>
+
+    <!-- FRAGMENT BOISSONS XML -->
+    <string name="ajouter_boissons">Ajouter vos boissons</string>
+    <string name="nom_boissons">Nom Boisson</string>
+    <string name="prix_boissons">Prix en fdj</string>
+    <string name="categorie_boissons">Boissons</string>
+    <string name="ajouter_boissons_button">Ajouter</string>
+
+    <!-- FRAGMENT DESSERTS XML -->
+    <string name="ajouter_desserts">Ajouter vos desserts</string>
+    <string name="nom_desserts">Nom Dessert</string>
+    <string name="prix_desserts">Prix en fdj</string>
+    <string name="categorie_desserts">Desserts</string>
+    <string name="ajouter_desserts_button">Ajouter</string>
+
+    <!-- FRAGMENT PLATS XML -->
+    <string name="ajouter_plat">Ajouter vos plats</string>
+    <string name="nom_plat">Nom Plat</string>
+    <string name="photo_ajout_plat">Photo du plat</string>
+    <string name="categorie_plat">Choisir une catégorie</string>
+    <string name="categorie_accompagnement">Accompagnement/Sous-forme :</string>
+    <string name="categorie_viande">Viande</string>
+    <string name="si_menu">Choisissez la catégorie de boissons gratuites pour le menu</string>
+    <string name="compostion_plat">Composition</string>
+    <string name="si_extra">Extras :</string>
+    <string name="nom_extra">Nom Extra</string>
+    <string name="prix_extra">Prix Extra</string>
+
+    <!-- FRAGMENT ENREGISTREMENT -->
+    <string name="toasty_info_existe_deja">Ce restaurant est déjà dans nos fichiers !</string>
+    <string name="toasty_success_enregistrer">Votre restaurant est enregistré !</string>
+    <string name="toasty_error_erreur_enregistrement">Erreur : </string>
+    <string name="absence_nom_restaurant_text_input_layout">Le nom du restaurant est important !</string>
+    <string name="absence_nom_proprietaire_text_input_layout">Le nom du propriétaire est important !</string>
+    <string name="absence_numero_proprietaire_text_input_layout">Le numéro du proprietaire est important !</string>
+    <string name="incorrecte_numero_proprietaire_text_input_layout">Entrez un numéro de télephone valide !</string>
+    <string name="absence_secteur_restaurant_text_input_layout">La zone de localisation du restaurant est importante !</string>
+    <string name="absence_mot_de_passe_text_input_layout">Le mot de passe est important !</string>
+    <string name="mot_de_passe_inferieur_a_5_text_input_layout">Votre mot de passe doit obligatoirement être supérieur à 5 caractères !</string>
+
+    <!-- FRAGMENT ESPACE RESTO -->
+    <string name="toasty_info_existe_pas">Ce nom de restaurant n\'est pas dans nos fichiers !</string>
+    <string name="toasty_success_connexion">Connecté avec succès !</string>
+    <string name="absence_pseudo_text_input_layout">Champs obligatoire pour la connexion !</string>
+    <string name="absence_mot_de_passe_connexion_text_input_layout">Champs obligatoire pour la connexion !</string>
+    <string name="mot_de_passe_connexion_inferieur_a_5_text_input_layout">Mot de passe incorrecte !</string>
+
+    <!-- ACTIVITY PROFIL -->
+    <string name="absence_rue_restaurant_text_input_layout">La rue où est située le restaurant est importante !</string>
+    <string name="absence_numero_restaurant_text_input_layout">Le numéro du restaurant est important !</string>
+    <string name="incorrecte_numero_restaurant_text_input_layout">Entrez un numéro de télephone valide !</string>
+    <string name="toast_cochez_3_cases_products">Vous devez au moins cocher 3 cases dans la catégorie TYPE DE PRODUITS !</string>
+    <string name="toast_cochez_2_cases_viandes">Vous devez au moins cocher 2 cases dans la catégorie TYPE DE VIANDES !</string>
+    <string name="toast_cochez_3_cases_accompagnement">Vous devez au moins cocher 3 cases dans la catégorie ACCOMPAGNEMENT/SOUS-FORME !</string>
+    <string name="toast_cochez_2_cases_boissons">Vous devez au moins cocher 2 cases dans la catégorie BOISSON !</string>
+    <string name="toast_cochez_case_dessert">Vous avez coché la case DESSERT et vous n\'avez coché aucun type de dessert ???</string>
+    <string name="toast_mettre_photo">Vous devez obligatoirement mettre une photo !</string>
+    <string name="easy_permission_dialog">Nous autorisez-vous à avoir accès à votre galerie photo ?</string>
+    <string name="toast_pas_photo">Vous n\'avez rien choisi !</string>
+    <string name="toast_enregistrement_sellings">Enregistré avec succès !</string>
+    <string name="toast_erreur_enregistrement_sellings">Une erreur s\'est produite. Veuillez réessayer !</string>
+    <string name="toast_erreur_enregistrement_photo">Une erreur s\'est produite. Veuillez réessayer plutard !</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- FRAGMENT SAUCES/FRITES - BOISSONS -->
+    <string name="toasty_produit_existe_deja">Ce produit est déjà enregistré. Supprimez le produit existant ou changez de nom pour ce produit !</string>
+    <string name="toasty_produit_success_enregistrer">Enregistré</string>
+    <string name="absence_nom_produit_text_input_layout">Renseignez un nom s\'il vous plaît</string>
+    <string name="absence_choix_categorie_text_input_layout">Vous devez obligatoirement choisir une catégorie !</string>
+    <string name="absence_prix_frites_text_input_layout">Vos frites n\'ont pas de prix ?</string>
+    <string name="absence_prix_text_input_layout">Le prix est obligatoire !</string>
+
+</resources>

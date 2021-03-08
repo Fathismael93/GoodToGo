@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controllers.Activities.ProfilActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/activity_profil_toolbar"
+            app:contentInsetStart="0dp"
+            style="@style/Toolbar">
+
+            <com.benew.client.goodtogo.widget.CanaroTextView
+                android:id="@+id/name_restaurant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:textSize="@dimen/guillotine_item_text_size"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/logout_profil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginEnd="20dp"
+                android:text="@string/deconnexion"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"/>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/completer_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/activity_profil_toolbar"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:text="@string/completer_profil"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/coordonnes_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/completer_profil"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@color/guillotine_background"
+            android:text="@string/coordonnees_restaurant"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_rue_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/coordonnes_restaurant"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/rue_restaurant"
+                android:textColorHint="@color/guillotine_background"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_input_number_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_input_rue_restaurant"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            app:boxCornerRadiusTopStart="7dp"
+            app:endIconMode="clear_text"
+            app:boxStrokeColor="@color/guillotine_background"
+            app:hintTextColor="@color/guillotine_background"
+            app:errorEnabled="true"
+            app:counterEnabled="true"
+            app:counterMaxLength="8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/numero_restaurant"
+                android:textColorHint="@color/guillotine_background"
+                android:inputType="phone"/>
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/type_produits_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_input_number_restaurant"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@color/guillotine_background"
+            android:text="@string/types_produits"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <CheckBox
+            android:id="@+id/plat_simple_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type_produits_restaurant"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/plat_simple"
+            android:textSize="20sp"
+            android:tag="plat_simple"/>
+
+        <CheckBox
+            android:id="@+id/menu_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type_produits_restaurant"
+            android:layout_toEndOf="@+id/plat_simple_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/menu"
+            android:textSize="20sp"
+            android:tag="menu"/>
+
+        <CheckBox
+            android:id="@+id/speciality_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/plat_simple_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/speciality"
+            android:textSize="20sp"
+            android:tag="speciality"/>
+
+        <CheckBox
+            android:id="@+id/assiette_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/plat_simple_case"
+            android:layout_toEndOf="@+id/speciality_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/assiettes"
+            android:textSize="20sp"
+            android:tag="assiette"/>
+
+        <CheckBox
+            android:id="@+id/plat_du_jour_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/speciality_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/plat_du_jour"
+            android:textSize="20sp"
+            android:tag="plat_du_jour"/>
+
+        <CheckBox
+            android:id="@+id/boissons_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/speciality_case"
+            android:layout_toEndOf="@+id/plat_du_jour_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/boissons"
+            android:textSize="20sp"
+            android:tag="boisson"/>
+
+        <CheckBox
+            android:id="@+id/dessert_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/plat_du_jour_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/dessert"
+            android:textSize="20sp"
+            android:tag="dessert"/>
+
+        <TextView
+            android:id="@+id/type_viandes_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dessert_case"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@color/guillotine_background"
+            android:text="@string/types_viandes"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <CheckBox
+            android:id="@+id/poulet_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type_viandes_restaurant"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/poulet"
+            android:textSize="20sp"
+            android:tag="poulet"/>
+
+        <CheckBox
+            android:id="@+id/viande_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/type_viandes_restaurant"
+            android:layout_toEndOf="@+id/poulet_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/viande"
+            android:textSize="20sp"
+            android:tag="viande"/>
+
+        <CheckBox
+            android:id="@+id/poisson_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/viande_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/poisson"
+            android:textSize="20sp"
+            android:tag="poisson"/>
+
+        <CheckBox
+            android:id="@+id/oeufs_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poulet_case"
+            android:layout_toEndOf="@+id/poisson_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/oeuf"
+            android:textSize="20sp"
+            android:tag="oeufs"/>
+
+        <CheckBox
+            android:id="@+id/fruit_mer_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/poisson_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/fruits_mer"
+            android:textSize="20sp"
+            android:tag="fruits_de_mer"/>
+
+        <TextView
+            android:id="@+id/forme_plat_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/fruit_mer_case"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@color/guillotine_background"
+            android:text="@string/forme_plat"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <CheckBox
+            android:id="@+id/burger_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forme_plat_restaurant"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/burger"
+            android:textSize="20sp"
+            android:tag="burger"/>
+
+        <CheckBox
+            android:id="@+id/sandwich_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/forme_plat_restaurant"
+            android:layout_toEndOf="@+id/burger_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/sandwich"
+            android:textSize="20sp"
+            android:tag="sandwich"/>
+
+        <CheckBox
+            android:id="@+id/riz_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/burger_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/riz"
+            android:textSize="20sp"
+            android:tag="riz"/>
+
+        <CheckBox
+            android:id="@+id/spaghetti_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/burger_case"
+            android:layout_toEndOf="@+id/riz_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/spaghetti"
+            android:textSize="20sp"
+            android:tag="spaghetti"/>
+
+        <CheckBox
+            android:id="@+id/moukbaza_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/riz_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/moukbaza"
+            android:textSize="20sp"
+            android:tag="moukbaza"/>
+
+        <CheckBox
+            android:id="@+id/pizza_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/riz_case"
+            android:layout_toEndOf="@+id/moukbaza_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/pizza"
+            android:textSize="20sp"
+            android:tag="pizza"/>
+
+        <CheckBox
+            android:id="@+id/kebab_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/moukbaza_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/kebab"
+            android:textSize="20sp"
+            android:tag="kebab"/>
+
+        <CheckBox
+            android:id="@+id/tacos_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/moukbaza_case"
+            android:layout_toEndOf="@+id/kebab_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/tacos"
+            android:textSize="20sp"
+            android:tag="tacos"/>
+
+        <CheckBox
+            android:id="@+id/haricot_vert_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kebab_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/haricot_vert"
+            android:textSize="20sp"
+            android:tag="haricot_vert"/>
+
+        <CheckBox
+            android:id="@+id/frites_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/kebab_case"
+            android:layout_toEndOf="@+id/haricot_vert_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/frites"
+            android:textSize="20sp"
+            android:tag="frites"/>
+
+        <CheckBox
+            android:id="@+id/potatoes_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/haricot_vert_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/potatoes"
+            android:textSize="20sp"
+            android:tag="potatoes"/>
+
+        <CheckBox
+            android:id="@+id/crepes_salees_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/haricot_vert_case"
+            android:layout_toEndOf="@+id/potatoes_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/crepes_salees"
+            android:textSize="20sp"
+            android:tag="crepes_salees"/>
+
+        <CheckBox
+            android:id="@+id/crepes_sucrees_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/potatoes_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/crepes_sucrees"
+            android:textSize="20sp"
+            android:tag="crepes_sucrees"/>
+
+        <CheckBox
+            android:id="@+id/galettes_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/potatoes_case"
+            android:layout_toEndOf="@+id/crepes_sucrees_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/galettes"
+            android:textSize="20sp"
+            android:tag="galettes"/>
+
+        <CheckBox
+            android:id="@+id/salades_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/crepes_sucrees_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/salades"
+            android:textSize="20sp"
+            android:tag="salades"/>
+
+        <TextView
+            android:id="@+id/boissons_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/salades_case"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@color/guillotine_background"
+            android:text="@string/boissons"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <CheckBox
+            android:id="@+id/eau_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/boissons_restaurant"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/eau"
+            android:textSize="20sp"
+            android:tag="eau"/>
+
+        <CheckBox
+            android:id="@+id/alcoolisees_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/boissons_restaurant"
+            android:layout_toEndOf="@+id/eau_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/alcoolisees"
+            android:textSize="20sp"
+            android:tag="boissons_alcoolisees"/>
+
+        <CheckBox
+            android:id="@+id/gazeuses_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/eau_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/gazeuses"
+            android:textSize="20sp"
+            android:tag="boissons_gazeuses"/>
+
+        <CheckBox
+            android:id="@+id/soda_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/eau_case"
+            android:layout_toEndOf="@+id/gazeuses_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/soda"
+            android:textSize="20sp"
+            android:tag="soda"/>
+
+        <CheckBox
+            android:id="@+id/jus_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gazeuses_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/jus"
+            android:textSize="20sp"
+            android:tag="jus"/>
+
+        <CheckBox
+            android:id="@+id/milkshake_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/gazeuses_case"
+            android:layout_toEndOf="@+id/jus_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/milkshake"
+            android:textSize="20sp"
+            android:tag="milkshake"/>
+
+        <CheckBox
+            android:id="@+id/the_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jus_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/the"
+            android:textSize="20sp"
+            android:tag="the"/>
+
+        <CheckBox
+            android:id="@+id/cafe_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/jus_case"
+            android:layout_toEndOf="@+id/the_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/cafe"
+            android:textSize="20sp"
+            android:tag="cafe"/>
+
+        <CheckBox
+            android:id="@+id/cappuccino_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/the_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/cappuccino"
+            android:textSize="20sp"
+            android:tag="cappuccino"/>
+
+        <CheckBox
+            android:id="@+id/chocolat_chaud_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/the_case"
+            android:layout_toEndOf="@+id/cappuccino_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/chocolat_chaud"
+            android:textSize="20sp"
+            android:tag="chocolat_chaud"/>
+
+        <TextView
+            android:id="@+id/desserts_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cappuccino_case"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:background="@color/guillotine_background"
+            android:text="@string/dessert"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <CheckBox
+            android:id="@+id/cremes_glacees_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desserts_restaurant"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/cremes_glacees"
+            android:textSize="20sp"
+            android:tag="cremes_glacees"/>
+
+        <CheckBox
+            android:id="@+id/gateaux_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/desserts_restaurant"
+            android:layout_toEndOf="@+id/cremes_glacees_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/gateaux"
+            android:textSize="20sp"
+            android:tag="gateaux"/>
+
+        <CheckBox
+            android:id="@+id/tablettes_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cremes_glacees_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/tablettes"
+            android:textSize="20sp"
+            android:tag="tablettes"/>
+
+        <CheckBox
+            android:id="@+id/bonbons_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cremes_glacees_case"
+            android:layout_toEndOf="@+id/tablettes_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/bonbons"
+            android:textSize="20sp"
+            android:tag="bonbons"/>
+
+        <CheckBox
+            android:id="@+id/crepes_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tablettes_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:text="@string/crepes"
+            android:textSize="20sp"
+            android:tag="crepes"/>
+
+        <CheckBox
+            android:id="@+id/mousse_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tablettes_case"
+            android:layout_toEndOf="@+id/crepes_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/mousse"
+            android:textSize="20sp"
+            android:tag="mousse"/>
+
+        <TextView
+            android:id="@+id/add_picture_restaurant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/crepes_case"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:text="@string/ajouter_photo_restaurant"
+            android:textSize="16sp"
+            android:textColor="@color/guillotine_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/profil_picture_restaurant"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_below="@+id/add_picture_restaurant"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true"
+            android:contentDescription="@string/photo_profil_restaurant"
+            android:background="@drawable/border_imageview"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/enregistrer_profil_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/profil_picture_restaurant"
+            android:layout_marginTop="20dp"
+            android:text="@string/boutton_enregistrer"
+            android:textColor="@color/white"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+</ScrollView>
