@@ -1,1 +1,0 @@
-com.benew.client.goodtogo.test

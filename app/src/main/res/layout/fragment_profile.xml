@@ -577,6 +577,18 @@
             android:textSize="14sp"
             android:textColor="@color/black"/>
 
+        <TextView
+            android:id="@+id/wrap_indication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/salades_indication"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="40dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/wrap_profil"
+            android:textSize="14sp"
+            android:textColor="@color/black"/>
+
         <LinearLayout
             android:id="@+id/type_boissons"
             android:layout_width="match_parent"

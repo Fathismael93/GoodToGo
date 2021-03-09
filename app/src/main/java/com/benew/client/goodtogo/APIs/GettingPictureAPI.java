@@ -43,6 +43,7 @@ public class GettingPictureAPI {
                 Glide.with(activity) //SHOWING PREVIEW OF IMAGE
                         .load(uriImageSelected)
                         .into(imageViewPlat);
+                imageViewPlat.setBackground(null);
             } else {
                 Toasty.info(context, context.getResources().getString(R.string.toast_pas_photo)).show();
             }

@@ -53,6 +53,7 @@ public class ProfileFragment_ViewBinding implements Unbinder {
     target.crepesSucrees = Utils.findRequiredViewAsType(source, R.id.crepes_sucrees_indication, "field 'crepesSucrees'", TextView.class);
     target.galettes = Utils.findRequiredViewAsType(source, R.id.galettes_indication, "field 'galettes'", TextView.class);
     target.salades = Utils.findRequiredViewAsType(source, R.id.salades_indication, "field 'salades'", TextView.class);
+    target.wrap = Utils.findRequiredViewAsType(source, R.id.wrap_indication, "field 'wrap'", TextView.class);
     target.eauMinerales = Utils.findRequiredViewAsType(source, R.id.eau_indication, "field 'eauMinerales'", TextView.class);
     target.alcoolisees = Utils.findRequiredViewAsType(source, R.id.alcoolisees_indication, "field 'alcoolisees'", TextView.class);
     target.gazeuses = Utils.findRequiredViewAsType(source, R.id.gazeuses_indication, "field 'gazeuses'", TextView.class);
@@ -112,6 +113,7 @@ public class ProfileFragment_ViewBinding implements Unbinder {
     target.crepesSucrees = null;
     target.galettes = null;
     target.salades = null;
+    target.wrap = null;
     target.eauMinerales = null;
     target.alcoolisees = null;
     target.gazeuses = null;

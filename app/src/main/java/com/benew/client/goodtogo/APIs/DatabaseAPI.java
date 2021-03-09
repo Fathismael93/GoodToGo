@@ -8,8 +8,12 @@ import android.net.Uri;
 import com.benew.client.goodtogo.Controllers.Activities.RestaurantActivity;
 import com.benew.client.goodtogo.FirebaseUsage.FirestoreUsage;
 import com.benew.client.goodtogo.Modals.Restaurant;
+import com.benew.client.goodtogo.Modals.TypeAccompagnementSousForme;
+import com.benew.client.goodtogo.Modals.TypeBoissons;
+import com.benew.client.goodtogo.Modals.TypeDesserts;
+import com.benew.client.goodtogo.Modals.TypeProducts;
+import com.benew.client.goodtogo.Modals.TypeViandes;
 import com.benew.client.goodtogo.R;
-import com.benew.client.goodtogo.Utils.Constants;
 import com.benew.client.goodtogo.Utils.Prevalent;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.storage.StorageReference;
@@ -26,6 +30,7 @@ import static com.benew.client.goodtogo.Utils.Constants.BOISSONS_COLLECTION;
 import static com.benew.client.goodtogo.Utils.Constants.DESSERT_COLLECTION;
 import static com.benew.client.goodtogo.Utils.Constants.PLAT_COLLECTION;
 import static com.benew.client.goodtogo.Utils.Constants.PRODUCTS_COLLECTION;
+import static com.benew.client.goodtogo.Utils.Constants.SELLINGS_COLLECTION;
 import static com.benew.client.goodtogo.Utils.Constants.VIANDES_COLLECTION;
 
 public class DatabaseAPI {
@@ -93,6 +98,25 @@ public class DatabaseAPI {
                         FirestoreUsage.getCategoryOfSellingDocumentRef(Prevalent.currentRestoOnline.getName(), DESSERT_COLLECTION).set(o4);
 
                         Prevalent.currentRestoOnline.setProfile_done(true);
+                        Prevalent.currentRestoOnline.setPicture(pathImageSavedInFirebase);
+
+                        String nameRestaurant = Prevalent.currentRestoOnline.getName();
+
+                        FirestoreUsage.getRestaurantDocumentReference(nameRestaurant).collection(SELLINGS_COLLECTION).document(PRODUCTS_COLLECTION).get()
+                                .addOnCompleteListener(task1 -> Prevalent.currentRestoOnlineTypeProducts = task1.getResult().toObject(TypeProducts.class));
+
+                        FirestoreUsage.getRestaurantDocumentReference(nameRestaurant).collection(SELLINGS_COLLECTION).document(VIANDES_COLLECTION).get()
+                                .addOnCompleteListener(task2 -> Prevalent.currentRestoOnlineTypeViandes = task2.getResult().toObject(TypeViandes.class));
+
+                        FirestoreUsage.getRestaurantDocumentReference(nameRestaurant).collection(SELLINGS_COLLECTION).document(DESSERT_COLLECTION).get()
+                                .addOnCompleteListener(task21 -> Prevalent.currentRestoOnlineTypeDesserts = task21.getResult().toObject(TypeDesserts.class));
+
+                        FirestoreUsage.getRestaurantDocumentReference(nameRestaurant).collection(SELLINGS_COLLECTION).document(BOISSONS_COLLECTION).get()
+                                .addOnCompleteListener(task3 -> Prevalent.currentRestoOnlineTypeBoissons = task3.getResult().toObject(TypeBoissons.class));
+
+                        FirestoreUsage.getRestaurantDocumentReference(nameRestaurant).collection(SELLINGS_COLLECTION).document(PLAT_COLLECTION).get()
+                                .addOnCompleteListener(task4 -> Prevalent.currentRestoOnlineTypeAccompagnementSousForme = task4.getResult().toObject(TypeAccompagnementSousForme.class));
+
                         Toasty.success(context, context.getResources().getString(R.string.toast_enregistrement_sellings)).show();
                         activity.startActivity(new Intent(context, RestaurantActivity.class));
                         toast.hide();

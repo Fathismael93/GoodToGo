@@ -2398,8 +2398,10 @@ int id wide 0x7f080268
 int id withText 0x7f080269
 int id withinBounds 0x7f08026a
 int id wrap 0x7f08026b
-int id wrap_content 0x7f08026c
-int id zero_corner_chip 0x7f08026d
+int id wrap_case 0x7f08026c
+int id wrap_content 0x7f08026d
+int id wrap_indication 0x7f08026e
+int id zero_corner_chip 0x7f08026f
 int integer abc_config_activityDefaultDur 0x7f090000
 int integer abc_config_activityShortDur 0x7f090001
 int integer app_bar_elevation_anim_duration 0x7f090002
@@ -2894,6 +2896,8 @@ int string types_produits 0x7f0e013a
 int string types_viandes 0x7f0e013b
 int string viande 0x7f0e013c
 int string viande_profil 0x7f0e013d
+int string wrap 0x7f0e013e
+int string wrap_profil 0x7f0e013f
 int style AlertDialog_AppCompat 0x7f0f0000
 int style AlertDialog_AppCompat_Light 0x7f0f0001
 int style AndroidThemeColorAccentYellow 0x7f0f0002

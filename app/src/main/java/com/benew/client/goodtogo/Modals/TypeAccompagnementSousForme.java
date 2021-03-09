@@ -3,11 +3,11 @@ package com.benew.client.goodtogo.Modals;
 public class TypeAccompagnementSousForme {
 
     private boolean burger, frites, galettes, kebab, moukbaza, pizza, potatoes, riz, salades, sandwich, spaghetti, tacos,
-    haricot_vert, crepes_salees, crepes_sucrees;
+    haricot_vert, crepes_salees, crepes_sucrees, wrap;
 
     public TypeAccompagnementSousForme() {}
 
-    public TypeAccompagnementSousForme(boolean burger, boolean frites, boolean galettes, boolean kebab, boolean moukbaza, boolean pizza, boolean potatoes, boolean riz, boolean salades, boolean sandwich, boolean spaghetti, boolean tacos, boolean haricot_vert, boolean crepes_salees, boolean crepes_sucrees) {
+    public TypeAccompagnementSousForme(boolean burger, boolean frites, boolean galettes, boolean kebab, boolean moukbaza, boolean pizza, boolean potatoes, boolean riz, boolean salades, boolean sandwich, boolean spaghetti, boolean tacos, boolean wrap, boolean haricot_vert, boolean crepes_salees, boolean crepes_sucrees) {
         this.burger = burger;
         this.frites = frites;
         this.galettes = galettes;
@@ -23,6 +23,15 @@ public class TypeAccompagnementSousForme {
         this.haricot_vert = haricot_vert;
         this.crepes_salees = crepes_salees;
         this.crepes_sucrees = crepes_sucrees;
+        this.wrap = wrap;
+    }
+
+    public boolean isWrap() {
+        return wrap;
+    }
+
+    public void setWrap(boolean wrap) {
+        this.wrap = wrap;
     }
 
     public boolean isBurger() {

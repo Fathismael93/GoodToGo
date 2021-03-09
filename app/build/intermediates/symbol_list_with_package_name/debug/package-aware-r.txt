@@ -2399,7 +2399,9 @@ id wide
 id withText
 id withinBounds
 id wrap
+id wrap_case
 id wrap_content
+id wrap_indication
 id zero_corner_chip
 integer abc_config_activityDefaultDur
 integer abc_config_activityShortDur
@@ -2895,6 +2897,8 @@ string types_produits
 string types_viandes
 string viande
 string viande_profil
+string wrap
+string wrap_profil
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow

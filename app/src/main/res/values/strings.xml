@@ -63,6 +63,7 @@
     <string name="crepes_sucrees">Crêpes sucrées</string>
     <string name="galettes">Galettes</string>
     <string name="salades">Salades</string>
+    <string name="wrap">Wrap</string>
     <string name="eau">Eaux minérales</string>
     <string name="alcoolisees">Boissons alcoolisées</string>
     <string name="gazeuses">Boissons gazeuses</string>
@@ -117,6 +118,7 @@
     <string name="crepes_sucrees_profil">Crêpes sucrées :</string>
     <string name="galettes_profil">Galettes :</string>
     <string name="salades_profil">Salades :</string>
+    <string name="wrap_profil">Wrap :</string>
     <string name="eau_profil">Eaux minérales :</string>
     <string name="alcoolisees_profil">Boissons alcoolisées :</string>
     <string name="gazeuses_profil">Boissons gazeuses :</string>

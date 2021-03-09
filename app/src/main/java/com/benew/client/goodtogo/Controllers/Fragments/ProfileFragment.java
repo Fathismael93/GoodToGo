@@ -50,6 +50,7 @@ public class ProfileFragment extends BaseFragment {
     @BindView(R.id.crepes_sucrees_indication) TextView crepesSucrees;
     @BindView(R.id.galettes_indication) TextView galettes;
     @BindView(R.id.salades_indication) TextView salades;
+    @BindView(R.id.wrap_indication) TextView wrap;
     @BindView(R.id.eau_indication) TextView eauMinerales;
     @BindView(R.id.alcoolisees_indication) TextView alcoolisees;
     @BindView(R.id.gazeuses_indication) TextView gazeuses;
@@ -86,7 +87,7 @@ public class ProfileFragment extends BaseFragment {
         StorageReference storageReference = FirebaseStorage.getInstance().getReference(Prevalent.currentRestoOnline.getPicture());
         storageReference.getDownloadUrl().addOnCompleteListener(task -> {
             Uri uri = task.getResult();
-            Glide.with(getContext()).load(uri).into(pictureRestaurant);
+            Glide.with(getActivity()).load(uri).into(pictureRestaurant);
             pictureRestaurant.setBackground(null);
         });
 
@@ -118,6 +119,7 @@ public class ProfileFragment extends BaseFragment {
         crepesSucrees.setText(result(R.string.crepes_sucrees_profil, Prevalent.currentRestoOnlineTypeAccompagnementSousForme.isCrepes_sucrees()));
         galettes.setText(result(R.string.galettes_profil, Prevalent.currentRestoOnlineTypeAccompagnementSousForme.isGalettes()));
         salades.setText(result(R.string.salades_profil, Prevalent.currentRestoOnlineTypeAccompagnementSousForme.isSalades()));
+        wrap.setText(result(R.string.wrap_profil, Prevalent.currentRestoOnlineTypeAccompagnementSousForme.isWrap()));
         eauMinerales.setText(result(R.string.eau_profil, Prevalent.currentRestoOnlineTypeBoissons.isEau()));
         alcoolisees.setText(result(R.string.alcoolisees_profil, Prevalent.currentRestoOnlineTypeBoissons.isBoissons_alcoolisees()));
         gazeuses.setText(result(R.string.gazeuses_profil, Prevalent.currentRestoOnlineTypeBoissons.isBoissons_gazeuses()));

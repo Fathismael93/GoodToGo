@@ -459,6 +459,18 @@
             android:textSize="20sp"
             android:tag="salades"/>
 
+        <CheckBox
+            android:id="@+id/wrap_case"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/crepes_sucrees_case"
+            android:layout_toEndOf="@+id/salades_case"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="30dp"
+            android:text="@string/wrap"
+            android:textSize="20sp"
+            android:tag="wrap"/>
+
         <TextView
             android:id="@+id/boissons_restaurant"
             android:layout_width="match_parent"

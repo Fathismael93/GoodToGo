@@ -14,6 +14,7 @@ public class ValidationAPI {
 
         if (name.isEmpty()) {
             inputLayout.setError(context.getResources().getString(id));
+            inputLayout.requestFocus();
             return false;
         } else {
             inputLayout.setError(null);

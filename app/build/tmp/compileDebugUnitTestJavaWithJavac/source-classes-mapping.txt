@@ -1,2 +1,0 @@
-com/benew/client/goodtogo/ExampleUnitTest.java
- com.benew.client.goodtogo.ExampleUnitTest

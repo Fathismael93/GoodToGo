@@ -64,6 +64,7 @@ public class ProfilActivity_ViewBinding implements Unbinder {
     target.crepesSucreesCheckBox = Utils.findRequiredViewAsType(source, R.id.crepes_sucrees_case, "field 'crepesSucreesCheckBox'", CheckBox.class);
     target.galettesCheckBox = Utils.findRequiredViewAsType(source, R.id.galettes_case, "field 'galettesCheckBox'", CheckBox.class);
     target.saladesCheckBox = Utils.findRequiredViewAsType(source, R.id.salades_case, "field 'saladesCheckBox'", CheckBox.class);
+    target.wrapCheckBox = Utils.findRequiredViewAsType(source, R.id.wrap_case, "field 'wrapCheckBox'", CheckBox.class);
     target.eauCheckBox = Utils.findRequiredViewAsType(source, R.id.eau_case, "field 'eauCheckBox'", CheckBox.class);
     target.alcooliseesCheckBox = Utils.findRequiredViewAsType(source, R.id.alcoolisees_case, "field 'alcooliseesCheckBox'", CheckBox.class);
     target.gazeusesCheckBox = Utils.findRequiredViewAsType(source, R.id.gazeuses_case, "field 'gazeusesCheckBox'", CheckBox.class);
@@ -144,6 +145,7 @@ public class ProfilActivity_ViewBinding implements Unbinder {
     target.crepesSucreesCheckBox = null;
     target.galettesCheckBox = null;
     target.saladesCheckBox = null;
+    target.wrapCheckBox = null;
     target.eauCheckBox = null;
     target.alcooliseesCheckBox = null;
     target.gazeusesCheckBox = null;

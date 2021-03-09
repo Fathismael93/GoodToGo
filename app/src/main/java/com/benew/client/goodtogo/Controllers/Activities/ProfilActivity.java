@@ -62,6 +62,7 @@ public class ProfilActivity extends BaseActivity {
     @BindView(R.id.crepes_sucrees_case) CheckBox crepesSucreesCheckBox;
     @BindView(R.id.galettes_case) CheckBox galettesCheckBox;
     @BindView(R.id.salades_case) CheckBox saladesCheckBox;
+    @BindView(R.id.wrap_case) CheckBox wrapCheckBox;
     @BindView(R.id.eau_case) CheckBox eauCheckBox;
     @BindView(R.id.alcoolisees_case) CheckBox alcooliseesCheckBox;
     @BindView(R.id.gazeuses_case) CheckBox gazeusesCheckBox;
@@ -196,6 +197,7 @@ public class ProfilActivity extends BaseActivity {
         typePlatCheckBoxes.add(crepesSucreesCheckBox);
         typePlatCheckBoxes.add(galettesCheckBox);
         typePlatCheckBoxes.add(saladesCheckBox);
+        typePlatCheckBoxes.add(wrapCheckBox);
 
         return searchTrueValueInArray(typePlatCheckBoxes);
     }
