@@ -35,6 +35,7 @@ public class GettingPictureAPI {
     // 4 - Handle activity response (after user has chosen or not a picture)
     public static Uri handleResponse(Context context, Activity activity, ImageView imageViewPlat, int choosePhoto, int requestCode, int resultCode, Intent data){
         Uri uriImageSelected = null;
+
         if (requestCode == choosePhoto) {
             if (resultCode == RESULT_OK) { //SUCCESS
                 uriImageSelected = data.getData();

@@ -1,7 +1,9 @@
 package com.benew.client.goodtogo.Controllers.Fragments;
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -9,6 +11,8 @@ import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentActivity;
 
 import com.benew.client.goodtogo.Bases.BaseFragment;
 import com.benew.client.goodtogo.FirebaseUsage.FirestoreUsage;
@@ -32,9 +36,10 @@ import es.dmoral.toasty.Toasty;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
-import static com.benew.client.goodtogo.APIs.GettingPictureAPI.chooseImageFromPhone;
+import static com.benew.client.goodtogo.APIs.GettingPictureAPI.PERMS;
 import static com.benew.client.goodtogo.APIs.GettingPictureAPI.handleResponse;
 import static com.benew.client.goodtogo.APIs.OtherFonctionsAPI.searchTrueValueInArray;
+import static com.benew.client.goodtogo.APIs.ValidationAPI.checkExtra;
 import static com.benew.client.goodtogo.APIs.ValidationAPI.validateCategory;
 import static com.benew.client.goodtogo.APIs.ValidationAPI.validatePrix;
 import static com.benew.client.goodtogo.APIs.ValidationAPI.validateString;
@@ -159,6 +164,17 @@ public class PlatFragment extends BaseFragment {
         uriImageSelected = handleResponse(getContext(), getActivity(), imageViewPlat, RC_CHOOSE_PHOTO_PLAT, requestCode, resultCode, data);
     }
 
+    private void chooseImageFromPhone(Context context, FragmentActivity activity, int perms, int choosePhoto){
+        if (!EasyPermissions.hasPermissions(context, PERMS)) {
+            EasyPermissions.requestPermissions(activity, context.getResources().getString(R.string.easy_permission_dialog), perms, PERMS);
+            return;
+        }
+
+        // 3 - Launch an "Selection Image" Activity
+        Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(i, choosePhoto);
+    }
+
     @OnClick(R.id.enregistrer_plat_button)
     void onClickEnregistrerPlat() {
         toast = new LoadToast(getContext());
@@ -233,16 +249,6 @@ public class PlatFragment extends BaseFragment {
                 drinkingChoices.removeAllViews();
             }
         });
-    }
-
-    private void checkExtra(String nameExtraTwo, String priceExtraTwo, TextInputLayout nameExtraTwoInput, TextInputLayout priceExtraTwoInput) {
-        if ((nameExtraTwo.isEmpty() && !priceExtraTwo.isEmpty()) || (!nameExtraTwo.isEmpty() && priceExtraTwo.isEmpty())) {
-            nameExtraTwoInput.setError("Renseignez ce champs si l'autre champs n'est pas vide");
-            priceExtraTwoInput.setError("Renseignez ce champs si l'autre champs n'est pas vide");
-        } else {
-            nameExtraTwoInput.setError(null);
-            priceExtraTwoInput.setError(null);
-        }
     }
 
     private void savePlatOnDatabase() {

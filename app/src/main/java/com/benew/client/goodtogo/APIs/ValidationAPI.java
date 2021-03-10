@@ -80,4 +80,14 @@ public class ValidationAPI {
             return true;
         }
     }
+
+    public static void checkExtra(String nameExtraTwo, String priceExtraTwo, TextInputLayout nameExtraTwoInput, TextInputLayout priceExtraTwoInput) {
+        if ((nameExtraTwo.isEmpty() && !priceExtraTwo.isEmpty()) || (!nameExtraTwo.isEmpty() && priceExtraTwo.isEmpty())) {
+            nameExtraTwoInput.setError("Renseignez ce champs si l'autre champs n'est pas vide");
+            priceExtraTwoInput.setError("Renseignez ce champs si l'autre champs n'est pas vide");
+        } else {
+            nameExtraTwoInput.setError(null);
+            priceExtraTwoInput.setError(null);
+        }
+    }
 }
