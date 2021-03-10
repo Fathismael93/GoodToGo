@@ -2016,6 +2016,7 @@ id end_padder
 id enregistrement
 id enregistrement_button
 id enregistrement_title
+id enregistrer_plat_button
 id enregistrer_profil_button
 id enterAlways
 id enterAlwaysCollapsed
@@ -2222,6 +2223,8 @@ id prix_boissons
 id prix_desserts
 id prix_extra
 id prix_extra_2
+id prix_plat
+id prix_plat_indication
 id prix_sauces_frites
 id profil_picture_restaurant
 id profile
@@ -2838,6 +2841,7 @@ string prix_autres
 string prix_boissons
 string prix_desserts
 string prix_extra
+string prix_plat
 string prix_sauces_frites
 string produits
 string profil
@@ -2885,6 +2889,7 @@ string toast_erreur_enregistrement_photo
 string toast_erreur_enregistrement_sellings
 string toast_message
 string toast_mettre_photo
+string toast_mettre_photo_plat
 string toast_pas_photo
 string toasty_error_erreur_enregistrement
 string toasty_info_existe_deja

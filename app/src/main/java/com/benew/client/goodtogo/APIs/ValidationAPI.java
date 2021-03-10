@@ -27,9 +27,11 @@ public class ValidationAPI {
 
         if (numberRestaurant.isEmpty()) {
             inputLayout.setError(context.getResources().getString(noNumber));
+            inputLayout.requestFocus();
             return false;
         } else if (numberRestaurant.length() != 8) {
             inputLayout.setError(context.getResources().getString(falseNumber));
+            inputLayout.requestFocus();
             return false;
         } else {
             inputLayout.setError(null);
@@ -42,9 +44,11 @@ public class ValidationAPI {
 
         if (password.isEmpty()) {
             inputLayout.setError(context.getResources().getString(absencePass));
+            inputLayout.requestFocus();
             return false;
         } else if (password.length() <= 5) {
             inputLayout.setError(context.getResources().getString(moinsQue5));
+            inputLayout.requestFocus();
             return false;
         } else {
             inputLayout.setError(null);
@@ -56,6 +60,7 @@ public class ValidationAPI {
 
         if (category == null) {
             inputLayout.setError(context.getResources().getString(id));
+            inputLayout.requestFocus();
             return false;
         } else {
             inputLayout.setError(null);
@@ -63,14 +68,12 @@ public class ValidationAPI {
         }
     }
 
-    public static boolean validatePrix(Context context, String category, TextInputLayout inputLayout, int idPrix, int idFrites) {
+    public static boolean validatePrix(Context context, TextInputLayout inputLayout, int idPrix) {
         String price = inputLayout.getEditText().getText().toString().trim();
 
-        if (price.isEmpty() && !category.equals(SAUCES)) {
+        if (price.isEmpty()) {
             inputLayout.setError(context.getResources().getString(idPrix));
-            return false;
-        } else if (price.isEmpty() && category != null && category.equals(FRITES)) {
-            inputLayout.setError(context.getResources().getString(idFrites));
+            inputLayout.requestFocus();
             return false;
         } else {
             inputLayout.setError(null);

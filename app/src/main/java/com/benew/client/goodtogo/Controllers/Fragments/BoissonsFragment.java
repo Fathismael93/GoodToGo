@@ -46,7 +46,7 @@ public class BoissonsFragment extends BaseFragment {
     ArrayAdapter<String> adapter;
 
     int nbreVuesCrees = 0;
-    int idNom, idCategorie, idPrix, idFrites;
+    int idNom, idCategorie, idPrix;
 
     public BoissonsFragment() {}
 
@@ -82,7 +82,6 @@ public class BoissonsFragment extends BaseFragment {
         idNom = R.string.absence_nom_produit_text_input_layout;
         idCategorie = R.string.absence_choix_categorie_text_input_layout;
         idPrix = R.string.absence_prix_text_input_layout;
-        idFrites = R.string.absence_prix_frites_text_input_layout;
     }
 
     @OnClick(R.id.ajouter_button)
@@ -93,7 +92,7 @@ public class BoissonsFragment extends BaseFragment {
 
         if (!validateString(getContext(), nameBoissonsInput, idNom) |
                 !validateCategory(getContext(), category, boissonsCategoryInput, idCategorie) |
-                !validatePrix(getContext(), category, prixBoissonsInput, idPrix, idFrites))
+                !validatePrix(getContext(), prixBoissonsInput, idPrix))
             return;
 
         String nom = nameBoissonsInput.getEditText().getText().toString().trim();
@@ -124,7 +123,7 @@ public class BoissonsFragment extends BaseFragment {
 
             if (!validateString(getContext(), nameSaucesFritesInput, idNom) |
                     !validateCategory(getContext(), categorie, categorieSaucesFritesInput, idCategorie) |
-                    !validatePrix(getContext(), categorie, priceSaucesFritesInput, idPrix, idFrites))
+                    !validatePrix(getContext(), priceSaucesFritesInput, idPrix))
                 return;
 
             String name = nameSaucesFritesInput.getEditText().getText().toString().trim();
@@ -170,7 +169,9 @@ public class BoissonsFragment extends BaseFragment {
         productMap.put("category", category);
         productMap.put("price", prix);
 
-        FirestoreUsage.getRestaurantDocumentReference(Prevalent.currentRestoOnline.getName()).collection(Constants.BOISSONS).document(nom).get().addOnCompleteListener(task -> {
+        FirestoreUsage.getRestaurantDocumentReference(Prevalent.currentRestoOnline.getName()).collection(Constants.BOISSONS).document(nom)
+                .get().addOnCompleteListener(task -> {
+
             DocumentSnapshot documentSnapshot = task.getResult();
 
             if (documentSnapshot.exists()) {

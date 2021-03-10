@@ -49,6 +49,9 @@ public class Constants {
     //DESSERTS COLLECTION OF A RESTAURANT
     public static final String DESSERTS = "DESSERTS";
 
+    //PLATS COLLECTION OF A RESTAURANT
+    public static final String PLATS = "PLATS";
+
     //CATEGORIE BOISSON
     public static final String BONBONS = "Bonbons";
     public static final String CREPES = "Crêpes";
@@ -77,6 +80,7 @@ public class Constants {
     public static final String SANDWICH = "Sandwich";
     public static final String SPAGHETTI = "Spaghetti";
     public static final String TACOS = "Tacos";
+    public static final String WRAP = "Wrap";
     public static final String HARICOT_VERT = "Haricot vert";
     public static final String CREPES_SALEES = "Crepes salees";
     public static final String CREPES_SUCREES = "Crepes sucrees";

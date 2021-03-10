@@ -20,9 +20,9 @@ public class ProfilActivity_ViewBinding implements Unbinder {
 
   private View view7f080057;
 
-  private View view7f0800ed;
+  private View view7f0800ee;
 
-  private View view7f08013c;
+  private View view7f08013d;
 
   @UiThread
   public ProfilActivity_ViewBinding(ProfilActivity target) {
@@ -91,7 +91,7 @@ public class ProfilActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.enregistrer_profil_button, "method 'onClickEnregistrerProfilButton'");
-    view7f0800ed = view;
+    view7f0800ee = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -99,7 +99,7 @@ public class ProfilActivity_ViewBinding implements Unbinder {
       }
     });
     view = Utils.findRequiredView(source, R.id.logout_profil, "method 'onClickLogout'");
-    view7f08013c = view;
+    view7f08013d = view;
     view.setOnClickListener(new DebouncingOnClickListener() {
       @Override
       public void doClick(View p0) {
@@ -166,9 +166,9 @@ public class ProfilActivity_ViewBinding implements Unbinder {
 
     view7f080057.setOnClickListener(null);
     view7f080057 = null;
-    view7f0800ed.setOnClickListener(null);
-    view7f0800ed = null;
-    view7f08013c.setOnClickListener(null);
-    view7f08013c = null;
+    view7f0800ee.setOnClickListener(null);
+    view7f0800ee = null;
+    view7f08013d.setOnClickListener(null);
+    view7f08013d = null;
   }
 }

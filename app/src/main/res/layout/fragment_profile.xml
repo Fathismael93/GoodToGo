@@ -8,7 +8,8 @@
     <!-- 1 | Add TabLayout to handle tabs -->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="50dp">
 
         <ImageView
             android:id="@+id/profil_picture_restaurant"

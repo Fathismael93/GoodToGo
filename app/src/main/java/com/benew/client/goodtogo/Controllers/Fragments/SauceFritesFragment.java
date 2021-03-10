@@ -24,7 +24,6 @@ import butterknife.OnClick;
 import es.dmoral.toasty.Toasty;
 
 import static com.benew.client.goodtogo.APIs.ValidationAPI.validateCategory;
-import static com.benew.client.goodtogo.APIs.ValidationAPI.validatePrix;
 import static com.benew.client.goodtogo.APIs.ValidationAPI.validateString;
 import static com.benew.client.goodtogo.Utils.Constants.FRITES;
 import static com.benew.client.goodtogo.Utils.Constants.SAUCES;
@@ -45,7 +44,7 @@ public class SauceFritesFragment extends BaseFragment {
     ArrayAdapter<String> adapter;
 
     int nbreVuesCrees = 0;
-    int idNom, idCategorie, idPrix, idFrites;
+    int idNom, idCategorie, idFrites;
 
     public SauceFritesFragment() {}
 
@@ -68,7 +67,6 @@ public class SauceFritesFragment extends BaseFragment {
 
         idNom = R.string.absence_nom_produit_text_input_layout;
         idCategorie = R.string.absence_choix_categorie_text_input_layout;
-        idPrix = R.string.absence_prix_text_input_layout;
         idFrites = R.string.absence_prix_frites_text_input_layout;
     }
 
@@ -80,7 +78,7 @@ public class SauceFritesFragment extends BaseFragment {
 
         if (!validateString(getContext(), nameSaucesFritesInput, idNom) |
                 !validateCategory(getContext(), category, sauceFritesCategoryInput, idCategorie) |
-                !validatePrix(getContext(), category, prixSaucesFritesInput, idPrix, idFrites))
+                !validatePrix(getContext(), category, prixSaucesFritesInput, idFrites))
             return;
 
         String nom = nameSaucesFritesInput.getEditText().getText().toString().trim();
@@ -141,7 +139,7 @@ public class SauceFritesFragment extends BaseFragment {
 
             if (!validateString(getContext(), nameSaucesFritesInput, idNom) |
                     !validateCategory(getContext(), categorie, categorieSaucesFritesInput, idCategorie) |
-                    !validatePrix(getContext(), categorie, priceSaucesFritesInput, idPrix, idFrites))
+                    !validatePrix(getContext(), categorie, priceSaucesFritesInput, idFrites))
                 return;
 
             String name = nameSaucesFritesInput.getEditText().getText().toString().trim();
@@ -151,13 +149,27 @@ public class SauceFritesFragment extends BaseFragment {
         }
     }
 
+    private boolean validatePrix(Context context, String category, TextInputLayout inputLayout, int idFrites) {
+        String price = inputLayout.getEditText().getText().toString().trim();
+
+        if (price.isEmpty() && category != null && category.equals(FRITES)) {
+            inputLayout.setError(context.getResources().getString(idFrites));
+            return false;
+        } else {
+            inputLayout.setError(null);
+            return true;
+        }
+    }
+
     private void saveProducts(Context context, LoadToast toast, String nom, String category, String prix) {
         Map productMap = new HashMap();
         productMap.put("name", nom);
         productMap.put("category", category);
         productMap.put("price", prix);
 
-        FirestoreUsage.getRestaurantDocumentReference(Prevalent.currentRestoOnline.getName()).collection(category).document(nom).get().addOnCompleteListener(task -> {
+        FirestoreUsage.getRestaurantDocumentReference(Prevalent.currentRestoOnline.getName()).collection(category).document(nom)
+                .get().addOnCompleteListener(task -> {
+
             DocumentSnapshot documentSnapshot = task.getResult();
 
             if (documentSnapshot.exists()) {

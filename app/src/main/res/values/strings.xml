@@ -176,6 +176,7 @@
     <string name="si_extra">Extras :</string>
     <string name="nom_extra">Nom Extra</string>
     <string name="prix_extra">Prix Extra</string>
+    <string name="prix_plat">Prix du plat</string>
 
     <!-- FRAGMENT ENREGISTREMENT -->
     <string name="toasty_info_existe_deja">Ce restaurant est déjà dans nos fichiers !</string>
@@ -214,12 +215,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!-- FRAGMENT SAUCES/FRITES - BOISSONS -->
+    <!-- FRAGMENT SAUCES/FRITES - BOISSONS - DESSERTS - PLAT -->
     <string name="toasty_produit_existe_deja">Ce produit est déjà enregistré. Supprimez le produit existant ou changez de nom pour ce produit !</string>
     <string name="toasty_produit_success_enregistrer">Enregistré</string>
     <string name="absence_nom_produit_text_input_layout">Renseignez un nom s\'il vous plaît</string>
     <string name="absence_choix_categorie_text_input_layout">Vous devez obligatoirement choisir une catégorie !</string>
     <string name="absence_prix_frites_text_input_layout">Vos frites n\'ont pas de prix ?</string>
     <string name="absence_prix_text_input_layout">Le prix est obligatoire !</string>
+    <string name="toast_mettre_photo_plat">Vous devez obligatoirement mettre une photo pour les plats !</string>
 
 </resources>
