@@ -23,7 +23,6 @@ import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
 import static com.benew.client.goodtogo.APIs.DatabaseAPI.saveDataRestaurantOnDatabase;
-import static com.benew.client.goodtogo.APIs.GettingPictureAPI.RC_IMAGE_PERMS;
 import static com.benew.client.goodtogo.APIs.GettingPictureAPI.chooseImageFromPhone;
 import static com.benew.client.goodtogo.APIs.GettingPictureAPI.handleResponse;
 import static com.benew.client.goodtogo.APIs.OtherFonctionsAPI.searchTrueValueInArray;
@@ -31,6 +30,9 @@ import static com.benew.client.goodtogo.APIs.ValidationAPI.validateNumber;
 import static com.benew.client.goodtogo.APIs.ValidationAPI.validateString;
 
 public class ProfilActivity extends BaseActivity {
+
+    private static final int RC_IMAGE_PERMS = 100;
+    private static final int RC_CHOOSE_PHOTO = 200;
 
     @BindView(R.id.name_restaurant) CanaroTextView nameOfRestaurant;
     @BindView(R.id.text_input_rue_restaurant) TextInputLayout rueRestaurantInput;
@@ -104,7 +106,7 @@ public class ProfilActivity extends BaseActivity {
     @OnClick(R.id.add_picture_restaurant)
     // 5 - Calling the appropriate method
     @AfterPermissionGranted(RC_IMAGE_PERMS)
-    public void onClickGetPicFromGalery() { chooseImageFromPhone(this, this); }
+    public void onClickGetPicFromGalery() { chooseImageFromPhone(this, this, RC_IMAGE_PERMS, RC_CHOOSE_PHOTO); }
 
     @OnClick(R.id.enregistrer_profil_button)
     void onClickEnregistrerProfilButton() {
@@ -146,7 +148,7 @@ public class ProfilActivity extends BaseActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // 6 - Calling the appropriate method after activity result
-        uriImageSelected = handleResponse(this, this, imageView, requestCode, resultCode, data);
+        uriImageSelected = handleResponse(this, this, imageView, RC_CHOOSE_PHOTO, requestCode, resultCode, data);
     }
 
     @OnClick(R.id.logout_profil)

@@ -35,8 +35,8 @@ com/benew/client/goodtogo/Modals/TypeBoissons.java
  com.benew.client.goodtogo.Modals.TypeBoissons
 com/benew/client/goodtogo/APIs/ValidationAPI.java
  com.benew.client.goodtogo.APIs.ValidationAPI
-com/benew/client/goodtogo/Controllers/Fragments/PlatFragment.java
- com.benew.client.goodtogo.Controllers.Fragments.PlatFragment
+com/benew/client/goodtogo/Controllers/Fragments/ProfileFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.ProfileFragment
 com/benew/client/goodtogo/Utils/Constants.java
  com.benew.client.goodtogo.Utils.Constants
 com/benew/client/goodtogo/BuildConfig.java
@@ -49,8 +49,8 @@ com/benew/client/goodtogo/Controllers/Fragments/ProductsFragment.java
  com.benew.client.goodtogo.Controllers.Fragments.ProductsFragment
 com/benew/client/goodtogo/Modals/TypeViandes.java
  com.benew.client.goodtogo.Modals.TypeViandes
-com/benew/client/goodtogo/Adapters/AddProductPager.java
- com.benew.client.goodtogo.Adapters.AddProductPager
+com/benew/client/goodtogo/Controllers/Fragments/BoissonsFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.BoissonsFragment
 com/benew/client/goodtogo/APIs/OtherFonctionsAPI.java
  com.benew.client.goodtogo.APIs.OtherFonctionsAPI
 com/benew/client/goodtogo/APIs/DatabaseAPI.java
@@ -63,7 +63,7 @@ com/benew/client/goodtogo/Modals/TypeAccompagnementSousForme.java
  com.benew.client.goodtogo.Modals.TypeAccompagnementSousForme
 com/benew/client/goodtogo/Controllers/Fragments/EnregistrementFragment.java
  com.benew.client.goodtogo.Controllers.Fragments.EnregistrementFragment
-com/benew/client/goodtogo/Controllers/Fragments/ProfileFragment.java
- com.benew.client.goodtogo.Controllers.Fragments.ProfileFragment
-com/benew/client/goodtogo/Controllers/Fragments/BoissonsFragment.java
- com.benew.client.goodtogo.Controllers.Fragments.BoissonsFragment
+com/benew/client/goodtogo/Adapters/AddProductPager.java
+ com.benew.client.goodtogo.Adapters.AddProductPager
+com/benew/client/goodtogo/Controllers/Fragments/PlatFragment.java
+ com.benew.client.goodtogo.Controllers.Fragments.PlatFragment

@@ -32,7 +32,6 @@ import es.dmoral.toasty.Toasty;
 import pub.devrel.easypermissions.AfterPermissionGranted;
 import pub.devrel.easypermissions.EasyPermissions;
 
-import static com.benew.client.goodtogo.APIs.GettingPictureAPI.RC_IMAGE_PERMS;
 import static com.benew.client.goodtogo.APIs.GettingPictureAPI.chooseImageFromPhone;
 import static com.benew.client.goodtogo.APIs.GettingPictureAPI.handleResponse;
 import static com.benew.client.goodtogo.APIs.OtherFonctionsAPI.searchTrueValueInArray;
@@ -41,6 +40,9 @@ import static com.benew.client.goodtogo.APIs.ValidationAPI.validatePrix;
 import static com.benew.client.goodtogo.APIs.ValidationAPI.validateString;
 
 public class PlatFragment extends BaseFragment {
+
+    private static final int RC_IMAGE_PLAT_PERMS = 400;
+    private static final int RC_CHOOSE_PHOTO_PLAT = 500;
 
     @BindView(R.id.nom_plat) TextInputLayout namePlatInput;
     @BindView(R.id.plat_picture) ImageView imageViewPlat;
@@ -64,6 +66,8 @@ public class PlatFragment extends BaseFragment {
     private Uri uriImageSelected;
 
     List categoriesProducts, categoriesAccompagnement, categoriesViande, categoriesBoissons;
+
+    List selectedCheckboxes;
     List<CheckBox> boissonsCheckBoxes = new ArrayList<>();
 
     String namePlat, nameExtraOne, nameExtraTwo, pricePlat, priceExtraOne, priceExtraTwo;
@@ -138,8 +142,22 @@ public class PlatFragment extends BaseFragment {
 
     @OnClick(R.id.add_picture_plat)
     // 5 - Calling the appropriate method
-    @AfterPermissionGranted(RC_IMAGE_PERMS)
-    public void onClickGetPicFromGalery() { chooseImageFromPhone(getContext(), getActivity()); }
+    @AfterPermissionGranted(RC_IMAGE_PLAT_PERMS)
+    public void onClickGetPicFromGalery() { chooseImageFromPhone(getContext(), getActivity(), RC_IMAGE_PLAT_PERMS, RC_CHOOSE_PHOTO_PLAT); }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        // 2 - Forward results to EasyPermissions
+        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, getContext());
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // 6 - Calling the appropriate method after activity result
+        uriImageSelected = handleResponse(getContext(), getActivity(), imageViewPlat, RC_CHOOSE_PHOTO_PLAT, requestCode, resultCode, data);
+    }
 
     @OnClick(R.id.enregistrer_plat_button)
     void onClickEnregistrerPlat() {
@@ -163,7 +181,7 @@ public class PlatFragment extends BaseFragment {
 
         if (uriImageSelected == null) Toasty.info(getContext(), getResources().getString(R.string.toast_mettre_photo_plat)).show();
 
-        List selectedCheckboxes = searchTrueValueInArray(boissonsCheckBoxes);
+        selectedCheckboxes = searchTrueValueInArray(boissonsCheckBoxes);
 
         if (categoryProduct.equals(Constants.MENU) && (int) selectedCheckboxes.get(0) == 0)
             Toasty.info(getContext(), "Votre menu n'a pas une boisson incluse ??").show();
@@ -171,29 +189,8 @@ public class PlatFragment extends BaseFragment {
         checkExtra(nameExtraOne, priceExtraOne, nameExtraInput, priceExtraInput);
         checkExtra(nameExtraTwo, priceExtraTwo, nameExtraTwoInput, priceExtraTwoInput);
 
+        toast.show();
         savePlatOnDatabase();
-
-        /*if (categoryProduct.equals(Constants.MENU) && (int) selectedCheckboxes.get(0) != 0) {
-            Map selectedCheckboxesMap = (Map) selectedCheckboxes.get(1);
-
-            for (int j=0; j < selectedCheckboxesMap.size(); j++)
-                Toasty.info(getContext(), boissonsCheckBoxes.get(j).getTag() + " : " + selectedCheckboxesMap.get(boissonsCheckBoxes.get(j).getTag())).show();
-        }*/
-
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        // 2 - Forward results to EasyPermissions
-        EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        // 6 - Calling the appropriate method after activity result
-        uriImageSelected = handleResponse(getContext(), getActivity(), imageViewPlat,requestCode, resultCode, data);
     }
 
     private void setAdapter(List categories, AutoCompleteTextView dropdown) {
@@ -266,6 +263,14 @@ public class PlatFragment extends BaseFragment {
             platMap.put("extra_two_price", priceExtraTwo);
         }
 
+        if (categoryProduct.equals(Constants.MENU)) {
+            Map selectedCheckboxesMap = (Map) selectedCheckboxes.get(1);
+
+            for (int j=0; j < selectedCheckboxesMap.size(); j++)
+                if ((boolean) selectedCheckboxesMap.get(boissonsCheckBoxes.get(j).getTag()))
+                    platMap.put(boissonsCheckBoxes.get(j).getTag(), selectedCheckboxesMap.get(boissonsCheckBoxes.get(j).getTag()));
+        }
+
         StorageReference restaurantPicture = FirestoreUsage.getRestaurantPictureReference(Prevalent.currentRestoOnline.getName())
                 .child("PLATS").child(namePlat + ".jpg");
 
@@ -274,7 +279,9 @@ public class PlatFragment extends BaseFragment {
                     String pathImageSavedInFirebase = taskSnapshot.getMetadata().getPath();
                     platMap.put("picture", pathImageSavedInFirebase);
 
-                    FirestoreUsage.getRestaurantDocumentReference(Prevalent.currentRestoOnline.getName()).collection(Constants.PLATS).document(namePlat)
+                    String documentName = namePlat + "-" + categoryProduct;
+
+                    FirestoreUsage.getRestaurantDocumentReference(Prevalent.currentRestoOnline.getName()).collection(Constants.PLATS).document(documentName)
                             .get().addOnCompleteListener(task -> {
 
                         DocumentSnapshot documentSnapshot = task.getResult();

@@ -20,24 +20,22 @@ public class GettingPictureAPI {
 
     // 1 - STATIC DATA FOR PICTURE
     public static final String PERMS = Manifest.permission.READ_EXTERNAL_STORAGE;
-    public static final int RC_IMAGE_PERMS = 100;
-    public static final int RC_CHOOSE_PHOTO = 200;
 
-    public static void chooseImageFromPhone(Context context, Activity activity){
+    public static void chooseImageFromPhone(Context context, Activity activity, int perms, int choosePhoto){
         if (!EasyPermissions.hasPermissions(context, PERMS)) {
-            EasyPermissions.requestPermissions(activity, context.getResources().getString(R.string.easy_permission_dialog), RC_IMAGE_PERMS, PERMS);
+            EasyPermissions.requestPermissions(activity, context.getResources().getString(R.string.easy_permission_dialog), perms, PERMS);
             return;
         }
 
         // 3 - Launch an "Selection Image" Activity
         Intent i = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        activity.startActivityForResult(i, RC_CHOOSE_PHOTO);
+        activity.startActivityForResult(i, choosePhoto);
     }
 
     // 4 - Handle activity response (after user has chosen or not a picture)
-    public static Uri handleResponse(Context context, Activity activity, ImageView imageViewPlat, int requestCode, int resultCode, Intent data){
+    public static Uri handleResponse(Context context, Activity activity, ImageView imageViewPlat, int choosePhoto, int requestCode, int resultCode, Intent data){
         Uri uriImageSelected = null;
-        if (requestCode == RC_CHOOSE_PHOTO) {
+        if (requestCode == choosePhoto) {
             if (resultCode == RESULT_OK) { //SUCCESS
                 uriImageSelected = data.getData();
                 Glide.with(activity) //SHOWING PREVIEW OF IMAGE

@@ -178,7 +178,9 @@ public class BoissonsFragment extends BaseFragment {
                 Toasty.info(context, context.getResources().getString(R.string.toasty_produit_existe_deja)).show();
                 toast.hide();
             } else {
-                FirestoreUsage.getRestaurantDocumentReference(Prevalent.currentRestoOnline.getName()).collection(Constants.BOISSONS).document(nom)
+                String documentName = nom + "-" + category;
+
+                FirestoreUsage.getRestaurantDocumentReference(Prevalent.currentRestoOnline.getName()).collection(Constants.BOISSONS).document(documentName)
                         .set(productMap).addOnSuccessListener(aVoid -> {
                     Toasty.success(context, context.getResources().getString(R.string.toasty_produit_success_enregistrer)).show();
                     toast.hide();
